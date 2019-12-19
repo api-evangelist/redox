@@ -1,0 +1,60 @@
+{
+    "name": "Redox",
+    "description": "Redox provides an integration platform to securely and efficiently exchange healthcare data. Healthcare Organizations and Technology Vendors connect to Redox once and have the ability to authorize the data they send to and receive from authorized partn...",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/28191-www-redoxengine-com.jpg",
+    "tags": [
+        "have api",
+        "health care"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/redox\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "Redox",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/28191-www-redoxengine-com.jpg",
+            "humanURL": "https:\/\/www.redoxengine.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/redox-postman-collection.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Blog",
+            "url": "https:\/\/www.redoxengine.com\/blog\/"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "https:\/\/crunchbase.com\/organization\/100health"
+        },
+        {
+            "type": "Developers",
+            "url": "http:\/\/developer.redoxengine.com\/"
+        },
+        {
+            "type": "Email",
+            "url": "hello@redoxengine.com"
+        },
+        {
+            "type": "FAQ",
+            "url": "http:\/\/docs.redoxengine.com\/faq\/"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/Redox"
+        },
+        {
+            "type": "Website",
+            "url": "https:\/\/www.redoxengine.com"
+        }
+    ]
+}
