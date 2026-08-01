@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/RedoxEngine
+notes: >-
+  Redox does not publish official multi-language API client SDKs to public package
+  registries; integration is via the FHIR / Data Model / Platform REST APIs directly.
+  The RedoxEngine GitHub organization publishes first-party open-source libraries and
+  sample applications (Node.js, .NET, Go SSO) that demonstrate connecting to the API.
+packages:
+- language: javascript
+  registry: github
+  name: redox-hl7-v2
+  url: https://github.com/RedoxEngine/redox-hl7-v2
+  official: true
+  description: Redox's in-house HL7v2 parser/generator library.
+- language: javascript
+  registry: github
+  name: redox-sample-nodejs
+  url: https://github.com/RedoxEngine/redox-sample-nodejs
+  official: true
+  description: Node.js starter/sample for the Redox API.
+- language: csharp
+  registry: github
+  name: .NET-Sample-App
+  url: https://github.com/RedoxEngine/.NET-Sample-App
+  official: true
+  description: C# sample application for connecting to Redox.

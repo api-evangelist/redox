@@ -1,0 +1,25 @@
+generated: '2026-07-21'
+method: searched
+source: https://api.redoxengine.com/.well-known/oauth-authorization-server
+docs: https://developer.redoxengine.com
+schemes:
+- name: RedoxPlatformOAuth
+  source: well-known/redox-oauth-authorization-server.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://api.redoxengine.com/platform/v1/oauth/authorize
+    tokenUrl: https://api.redoxengine.com/platform/v1/oauth/token
+    pkce: S256
+scopes:
+- scope: openid
+  description: OpenID Connect authentication scope.
+  flows: [authorizationCode]
+  sources: [well-known/redox-oauth-authorization-server.json]
+- scope: offline_access
+  description: Requests a refresh token for long-lived access.
+  flows: [authorizationCode]
+  sources: [well-known/redox-oauth-authorization-server.json]
+- scope: platform_access
+  description: Access to the Redox Platform API (organizations, sources, destinations).
+  flows: [authorizationCode]
+  sources: [well-known/redox-oauth-authorization-server.json]

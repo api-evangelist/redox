@@ -1,0 +1,38 @@
+# Redox
+
+> Redox is a healthcare data interoperability platform (founded 2014, Madison, WI) that enables secure, real-time exchange of clinical and administrative data across the healthcare ecosystem through a single API and a network of 100+ EHR connections and 12,000+ connected organizations. Redox is HITRUST r2 and SOC 2 Type 2 certified and HIPAA/GDPR/CCPA aligned.
+
+## APIs
+
+- [Redox FHIR API](https://docs.redoxengine.com/api-reference/fhir-api-reference/): Modern HL7 FHIR API for exchanging clinical and administrative healthcare data.
+- [Redox Data Model API](https://docs.redoxengine.com/api-reference/data-model-api/): Legacy event-based Data Model (Redox Messages) API.
+- [Redox Platform API](https://docs.redoxengine.com/api-reference/platform-api/): Manage organizations, sources, and destinations.
+
+## Authentication
+
+- [OAuth Authorization Server metadata](https://api.redoxengine.com/.well-known/oauth-authorization-server): RFC 8414 metadata (authorization_code + refresh_token, PKCE S256, scopes openid/offline_access/platform_access).
+- Token endpoint: https://api.redoxengine.com/platform/v1/oauth/token
+- [Security & access management docs](https://docs.redoxengine.com/basics/security/)
+
+## Docs
+
+- [Developer documentation](https://docs.redoxengine.com/)
+- [API reference](https://docs.redoxengine.com/api-reference/)
+- [Getting started](https://docs.redoxengine.com/basics/)
+- [Blog](https://redoxengine.com/blog/)
+
+## Operations
+
+- [Status page](https://status.redoxengine.com/): 99.95% uptime target; components include Platform API, Traffic Processing, Developer Docs.
+- [Platform security & trust](https://redoxengine.com/platform-security/): HITRUST r2, SOC 2 Type 2, HIPAA, GDPR, CCPA.
+- [Responsible disclosure (HackerOne bug bounty)](https://docs.redoxengine.com/security/responsible-disclosure)
+
+## Repositories
+
+- [RedoxEngine on GitHub](https://github.com/RedoxEngine)
+- [redox-hl7-v2](https://github.com/RedoxEngine/redox-hl7-v2): First-party HL7v2 parser/generator.
+
+## Commercial
+
+- [Pricing](https://redoxengine.com/forms/pricing)
+- [Sign up](https://dashboard.redoxengine.com/#/signup/)

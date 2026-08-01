@@ -1,7 +1,15 @@
 aid: redox
 name: Redox
-description: Redox is a company surfaced as a portfolio company of battery-ventures and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Redox is a healthcare data interoperability platform, founded in 2014 and headquartered
+  in Madison, Wisconsin, that enables secure, real-time exchange of clinical and administrative
+  data across the healthcare ecosystem. Through a single API and a network of 100+ EHR
+  connections and 12,000+ connected healthcare organizations, Redox lets digital health
+  vendors, providers, payers, EHRs, and life-sciences companies integrate once and reach
+  the entire network. The platform offers a modern FHIR API, the legacy Redox Data Model
+  (Redox Messages) event-based API, and a Platform API for managing organizations, sources,
+  and destinations. Redox is HITRUST r2 and SOC 2 Type 2 certified and HIPAA, GDPR, and
+  CCPA aligned, processing tens of billions of healthcare transactions annually.
 url: https://raw.githubusercontent.com/api-evangelist/redox/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,14 +17,124 @@ x-backed-by:
 - battery-ventures
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
+image: https://redoxengine.com/wp-content/uploads/2023/01/redox-logo.png
 tags:
 - Company
-apis: []
+- Healthcare
+- Interoperability
+- FHIR
+- EHR
+- Health Data
+- Integration
+- HL7
+- Digital Health
+- Healthcare API
+apis:
+- name: Redox FHIR API
+  description: >-
+    Redox's modern FHIR API for exchanging clinical and administrative healthcare data
+    across the Redox network using HL7 FHIR resources and notifications, authenticated
+    with OAuth2.
+  humanURL: https://docs.redoxengine.com/api-reference/fhir-api-reference/
+  baseURL: https://api.redoxengine.com
+  tags:
+  - FHIR
+  - Healthcare
+  - Interoperability
+  properties:
+  - type: Documentation
+    url: https://docs.redoxengine.com/api-reference/fhir-api-reference/
+- name: Redox Data Model API
+  description: >-
+    Redox's legacy event-based Data Model API (Redox Messages) for exchanging structured
+    healthcare data across the network via JSON message payloads.
+  humanURL: https://docs.redoxengine.com/api-reference/data-model-api/
+  baseURL: https://api.redoxengine.com
+  tags:
+  - Healthcare
+  - Interoperability
+  properties:
+  - type: Documentation
+    url: https://docs.redoxengine.com/api-reference/data-model-api/
+- name: Redox Platform API
+  description: >-
+    The Redox Platform API for managing organizations, sources, destinations, and platform
+    settings via user-level API keys.
+  humanURL: https://docs.redoxengine.com/api-reference/platform-api/
+  baseURL: https://api.redoxengine.com
+  tags:
+  - Healthcare
+  - Platform
+  properties:
+  - type: Documentation
+    url: https://docs.redoxengine.com/api-reference/platform-api/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+common:
+- type: VulnerabilityDisclosure
+  url: security/redox-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/redox-domain-security.yml
+- type: DeveloperPortal
+  url: https://docs.redoxengine.com/
+- type: Documentation
+  url: https://docs.redoxengine.com/
+- type: APIReference
+  url: https://docs.redoxengine.com/api-reference/
+- type: GettingStarted
+  url: https://docs.redoxengine.com/basics/
+- type: Blog
+  url: https://redoxengine.com/blog/
+- type: GitHubOrganization
+  url: https://github.com/RedoxEngine
+- type: Pricing
+  url: https://redoxengine.com/forms/pricing
+- type: SignUp
+  url: https://dashboard.redoxengine.com/#/signup/
+- type: StatusPage
+  url: https://status.redoxengine.com/
+- type: TrustCenter
+  url: https://redoxengine.com/platform-security/
+- type: Security
+  url: https://docs.redoxengine.com/security/responsible-disclosure
+- type: Compliance
+  url: https://redoxengine.com/platform-security/
+- type: Authentication
+  url: authentication/redox-authentication.yml
+- type: OAuthScopes
+  url: scopes/redox-scopes.yml
+- type: WellKnown
+  url: well-known/redox-well-known.yml
+- type: Conformance
+  url: conformance/redox-conformance.yml
+- type: Lifecycle
+  url: lifecycle/redox-lifecycle.yml
+- type: Conventions
+  url: conventions/redox-conventions.yml
+- type: Packages
+  url: packages/redox-packages.yml
+- type: LLMsTxt
+  url: llms/redox-llms.txt
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 11
+  pass: local-v1

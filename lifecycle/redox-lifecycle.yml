@@ -1,0 +1,23 @@
+generated: '2026-07-21'
+method: searched
+source: https://status.redoxengine.com/ ; https://docs.redoxengine.com/
+versioning:
+  scheme: product-line
+  current: FHIR API (modern) alongside legacy Data Model API
+  notes: >-
+    Redox runs a modern FHIR API and a legacy Data Model (Redox Messages) API in parallel;
+    the FHIR API is the forward-looking surface.
+  docs: https://docs.redoxengine.com/api-reference/
+status_page: https://status.redoxengine.com/
+sla:
+  uptime_target: "99.95%"
+  notes: Redox advertises 99.95% platform uptime.
+components_monitored:
+- Traffic Processing
+- Logs
+- Alerting
+- Dashboard Tools
+- Platform API
+- Developer Docs
+- Hosting
+- Third Party Services

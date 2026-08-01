@@ -1,0 +1,28 @@
+generated: '2026-07-21'
+method: searched
+source: https://redoxengine.com/platform-security/ ; https://docs.redoxengine.com/
+standards:
+- id: fhir-r4
+  conforms: true
+  evidence: Redox publishes a modern HL7 FHIR API (FHIR R4 resources and notifications)
+- id: hl7-v2
+  conforms: true
+  evidence: Redox maintains an in-house HL7v2 parser/generator (redox-hl7-v2) and exchanges HL7v2 data
+- id: oauth2
+  conforms: true
+  evidence: API authentication is OAuth2 (docs reference OAuth token issuance and troubleshooting)
+- id: hitrust-r2
+  conforms: true
+  evidence: HITRUST r2 certification for AWS and Google Cloud Platform transactions
+- id: soc2-type2
+  conforms: true
+  evidence: SOC 2 Type 2 report covering security, availability, and privacy
+- id: hipaa
+  conforms: true
+  evidence: HIPAA-aligned; Business Associate Agreements supported
+- id: gdpr
+  conforms: true
+  evidence: GDPR alignment stated on platform-security page
+- id: ccpa
+  conforms: true
+  evidence: CCPA alignment stated on platform-security page

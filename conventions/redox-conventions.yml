@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: derived
+source: >-
+  https://docs.redoxengine.com/ ; api.redoxengine.com/.well-known/oauth-authorization-server ;
+  HL7 FHIR R4 conventions for the Redox FHIR API
+notes: >-
+  Cross-cutting semantics for the Redox APIs. Derived from the published OAuth authorization
+  server metadata and the FHIR R4 basis of the modern API; not every field below is
+  individually re-documented by Redox.
+authentication:
+  style: "OAuth2 bearer access token (Authorization: Bearer)"
+  token_endpoint: https://api.redoxengine.com/platform/v1/oauth/token
+  ref: authentication/redox-authentication.yml
+pagination:
+  style: FHIR Bundle link relations (self/next/previous) on search responses
+  applies_to: Redox FHIR API
+error_envelope:
+  fhir: FHIR OperationOutcome resource on the FHIR API
+  ref: errors
+versioning:
+  style: parallel product lines (modern FHIR API and legacy Data Model API)
+  ref: lifecycle/redox-lifecycle.yml
+rate_limits:
+  documented: unknown
+security:
+  transport: TLS 1.3, HSTS enabled on api.redoxengine.com
+  ref: security/redox-domain-security.yml

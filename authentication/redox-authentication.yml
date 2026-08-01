@@ -1,0 +1,53 @@
+generated: '2026-07-21'
+method: searched
+source: https://api.redoxengine.com/.well-known/oauth-authorization-server
+docs: https://docs.redoxengine.com/basics/security/
+summary:
+  types:
+  - oauth2
+  - apiKey
+  oauth2_flows:
+  - authorizationCode
+  notes: >-
+    Redox exposes an RFC 8414 OAuth 2.0 authorization server at
+    https://api.redoxengine.com/.well-known/oauth-authorization-server. The FHIR and Data
+    Model APIs authenticate with OAuth2 bearer access tokens; the Platform API additionally
+    supports user-level API keys.
+schemes:
+- name: RedoxPlatformOAuth
+  type: oauth2
+  applies_to:
+  - Redox FHIR API
+  - Redox Data Model API
+  - Redox Platform API
+  issuer: https://api.redoxengine.com
+  authorization_endpoint: https://api.redoxengine.com/platform/v1/oauth/authorize
+  token_endpoint: https://api.redoxengine.com/platform/v1/oauth/token
+  revocation_endpoint: https://api.redoxengine.com/platform/v1/oauth/revoke
+  jwks_uri: https://api.redoxengine.com/platform/v1/oauth/jwks.json
+  registration_endpoint: https://api.redoxengine.com/platform/v1/oauth/register
+  grant_types_supported:
+  - authorization_code
+  - refresh_token
+  response_types_supported:
+  - code
+  token_endpoint_auth_methods_supported:
+  - client_secret_basic
+  - client_secret_post
+  - none
+  code_challenge_methods_supported:
+  - S256
+  scopes_supported:
+  - openid
+  - offline_access
+  - platform_access
+  sources:
+  - well-known/redox-oauth-authorization-server.json
+- name: platform-api-key
+  type: apiKey
+  in: header
+  applies_to:
+  - Redox Platform API
+  description: User-level API keys used to manage organizations, sources, and destinations.
+  sources:
+  - https://docs.redoxengine.com/api-reference/platform-api/

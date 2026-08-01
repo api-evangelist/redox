@@ -1,0 +1,24 @@
+generated: '2026-07-21'
+method: searched
+source: https://redoxengine.com/platform-security/
+url: https://redoxengine.com/platform-security/
+certifications:
+- HITRUST r2
+- SOC 2 Type 2
+compliance:
+- HIPAA
+- GDPR
+- CCPA
+notes: >-
+  Redox maintains HITRUST certification for all cloud environments and holds HITRUST r2
+  (highest standard) for AWS and Google Cloud Platform transactions, validated by a
+  third-party auditor. SOC 2 Type 2 covers information security, availability, and privacy
+  controls. The platform is HIPAA, GDPR, and CCPA aligned.
+evidence:
+- source: https://redoxengine.com/platform-security/
+  keywords:
+  - hitrust
+  - soc 2
+  - hipaa
+  - gdpr
+  - security
