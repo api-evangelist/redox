@@ -1,0 +1,68 @@
+generated: '2026-08-14'
+method: searched
+source: https://redoxengine.com/blog/category/changelog/
+notes: >-
+  Redox's dated changelog is a blog category, not a standalone dev-docs changelog page. The
+  common[] ChangeLog pointer previously carried in this repo (docs.redoxengine.com/product-changelog/)
+  returns HTTP 404 as of this pass and has been corrected in apis.yml to point here instead. Entries
+  are narrative product-update posts (dated) rather than semver releases; no breaking/additive
+  classification is published, so `breaking` below is left null rather than guessed.
+scheme: dated blog category (Changelog), not semantic-versioned
+entries:
+- date: '2026-07-07'
+  title: "Here's what Redox is releasing in Q3 2026"
+  url: https://redoxengine.com/blog/heres-what-redox-is-releasing-in-q3-2026/
+  breaking: null
+  highlights: [Builds on the June 3, 2026 MCP server / AI Assistant Suite / in-flight data processing launch.]
+- date: '2026-06-02'
+  title: "Here's what Redox is releasing in Q2 2026"
+  url: https://redoxengine.com/blog/heres-what-redox-is-releasing-in-q2-2026/
+  breaking: null
+  highlights: [Month-by-month Q2 2026 roadmap.]
+- date: '2026-06-02'
+  title: "AI Assistant Suite: Built to optimize real-world integration workflows"
+  url: https://redoxengine.com/blog/ai-assistant-suite-built-to-optimize-real-world-integration/
+  breaking: null
+  highlights:
+  - Config Modifier Assistant, Log Summary Assistant, Payload Summary Assistant added to the
+    Redox dashboard; available now for all Redox customers.
+- date: '2026-05-11'
+  title: "Featured workflows: See data orchestration in action"
+  url: https://redoxengine.com/blog/featured-workflows-see-data-orchestration-in-action/
+  breaking: null
+  highlights: [Library of composable, rearrangeable workflow templates for common integration use cases.]
+- date: '2026-05-11'
+  title: "From static logs to workflows you can actually follow"
+  url: https://redoxengine.com/blog/from-static-logs-to-workflows-you-can-actually-follow/
+  breaking: null
+  highlights: [New interactive Workflow Viewer replacing static, text-based log outlines.]
+- date: '2026-03-03'
+  title: "Upgraded Alert Rules: Greater control & visibility for more proactive monitoring"
+  url: https://redoxengine.com/blog/upgraded-alert-rules-greater-control-and-visibility-for-more-proactive-monitorin/
+  breaking: null
+  highlights: [Alert rules improvements for proactive traffic/connection monitoring.]
+- date: '2026-01-26'
+  title: "Building a Better Logs Experience, Together"
+  url: https://redoxengine.com/blog/building-a-better-logs-experience-together/
+  breaking: null
+  highlights: [Modular processors enabling branching logic, enrichment, validation, rules-based routing in logs.]
+- date: '2025-08-18'
+  title: "Putting power in your hands: A look back (and forward) at Redox Self-Service"
+  url: https://redoxengine.com/blog/putting-power-in-your-hands-self-service/
+  breaking: null
+  highlights: [Recap of the self-service toolkit and customer webinar.]
+- date: '2025-08-13'
+  title: "Hydrate your cloud environment with Redox's new Cloud Connectivity Tools"
+  url: https://redoxengine.com/blog/hydrate-your-cloud-environment-with-redoxs-new-cloud-connectivity-tools/
+  breaking: null
+  highlights: [Self-service Cloud Connectivity Tools for direct-to-cloud destination setup.]
+- date: '2025-07-25'
+  title: "Redox + TEFCA: Another Easy Button to Nationwide Interoperability"
+  url: https://redoxengine.com/blog/redox-tefca-another-easy-button-to-nationwide-interoperability/
+  breaking: null
+  highlights: [TEFCA participation via a direct CommonWell onramp.]
+- date: '2025-07-17'
+  title: "Redox Now Supports CDS Hooks: Smarter Decision Support, Seamlessly Delivered"
+  url: https://redoxengine.com/blog/redox-now-supports-cds-hooks/
+  breaking: null
+  highlights: [Full support for the HL7 CDS Hooks standard for real-time clinical decision support.]

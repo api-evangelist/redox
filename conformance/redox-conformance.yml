@@ -1,6 +1,6 @@
-generated: '2026-07-21'
+generated: '2026-08-14'
 method: searched
-source: https://redoxengine.com/platform-security/ ; https://docs.redoxengine.com/
+source: https://redoxengine.com/platform-security/ ; https://docs.redoxengine.com/ ; https://redoxengine.com/blog/category/changelog/
 standards:
 - id: fhir-r4
   conforms: true
@@ -26,3 +26,11 @@ standards:
 - id: ccpa
   conforms: true
   evidence: CCPA alignment stated on platform-security page
+- id: cds-hooks
+  conforms: true
+  evidence: "\"Redox Now Supports CDS Hooks\" (2025-07-17) — full support for the HL7 CDS Hooks standard
+    for real-time clinical decision support (https://redoxengine.com/blog/redox-now-supports-cds-hooks/)."
+- id: tefca
+  conforms: true
+  evidence: "\"Redox + TEFCA\" (2025-07-25) — direct onramp to CommonWell for TEFCA participation
+    (https://redoxengine.com/blog/redox-tefca-another-easy-button-to-nationwide-interoperability/)."

@@ -1,6 +1,7 @@
-generated: '2026-07-21'
+generated: '2026-08-14'
 method: searched
-source: https://status.redoxengine.com/ ; https://docs.redoxengine.com/
+source: https://status.redoxengine.com/ ; https://docs.redoxengine.com/ ;
+  https://docs.redoxengine.com/how-to-use-redox/manage-your-redox-setup/migrate-from-a-legacy-api-key-to-an-oauth-api-key/
 versioning:
   scheme: product-line
   current: FHIR API (modern) alongside legacy Data Model API
@@ -21,3 +22,14 @@ components_monitored:
 - Developer Docs
 - Hosting
 - Third Party Services
+deprecation:
+  policy_url: null
+  sunset_header: false
+  found: false
+  notes: >-
+    No published deprecation policy or RFC 8594 Sunset/Deprecation header support found. The
+    closest related doc is a legacy-API-key-to-OAuth-API-key migration guide, but it explicitly
+    describes both key types as coexisting without conflict and does not name legacy keys as
+    deprecated/sunset (legacy keys are in fact labeled "Recommended" in that doc as of this pass) —
+    so no `type: Deprecation` common[] pointer is emitted; this is an honest absence, not a gap
+    in search effort.

@@ -29,7 +29,7 @@ accessModel:
   method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-21'
+modified: '2026-08-14'
 image: https://redoxengine.com/wp-content/uploads/2023/01/redox-logo.png
 tags:
 - Company
@@ -77,6 +77,8 @@ apis:
   properties:
   - type: Documentation
     url: https://docs.redoxengine.com/api-reference/platform-api/
+  - type: MCPServer
+    url: mcp/redox-mcp.yml
 - aid: redox:redox-fhir-r4-api
   name: Redox FHIR R4 API
   tags:
@@ -173,8 +175,28 @@ common:
   url: conventions/redox-conventions.yml
 - type: Packages
   url: packages/redox-packages.yml
+- type: SDKs
+  url: packages/redox-packages.yml
 - type: LLMsTxt
   url: llms/redox-llms.txt
+- type: MCPServer
+  url: mcp/redox-mcp.yml
+- type: RateLimits
+  url: rate-limits/redox-rate-limits.yml
+- type: ErrorCatalog
+  url: errors/redox-problem-types.yml
+- type: Sandbox
+  url: sandbox/redox-sandbox.yml
+- type: ChangeLog
+  url: changelog/redox-changelog.yml
+- type: Webhooks
+  url: asyncapi/redox-webhooks.yml
+- type: Plans
+  url: plans/redox-plans-pricing.yml
+- type: TermsOfService
+  url: https://redoxengine.com/legal/terms-of-use/
+- type: PrivacyPolicy
+  url: https://redoxengine.com/legal/privacy-policy/
 - type: DomainSecurity
   url: security/redox-domain-security.yml
 - type: Website
@@ -202,7 +224,10 @@ common:
 - type: StatusPage
   url: https://status.redoxengine.com
 - type: ChangeLog
-  url: https://docs.redoxengine.com/product-changelog/
+  url: https://redoxengine.com/blog/category/changelog/
+  note: >-
+    Corrected 2026-08-14 — the previous docs.redoxengine.com/product-changelog/ URL 404s; the
+    real dated changelog surface is this blog category (see changelog/redox-changelog.yml).
 - type: Security
   url: https://docs.redoxengine.com/security/
 - type: Compliance
@@ -342,7 +367,7 @@ common:
 - type: DomainSecurity
   url: security/redox-domain-security.yml
 x-enrichment:
-  date: '2026-07-21'
+  date: '2026-08-14'
   status: enriched
-  artifacts_added: 11
+  artifacts_added: 8
   pass: local-v1

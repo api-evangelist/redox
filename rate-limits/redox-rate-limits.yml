@@ -1,0 +1,43 @@
+generated: '2026-08-14'
+method: searched
+source: https://docs.redoxengine.com/api-reference/quotas-and-constraints/
+limit_count: 2
+limits:
+- scope: per-account (by source IP address)
+  window: rolling 5 minutes
+  limit: 10000
+  unit: requests
+  notes: >-
+    Standard rate limit across the Redox APIs: up to 10,000 requests every five minutes per
+    user, as determined by IP address. The five-minute window is rolling, not fixed — a client
+    that trips the limit only has to wait until the original window elapses, not a full five
+    minutes from the error.
+- scope: per-account, lowered for specific tooling
+  window: rolling 5 minutes
+  limit: 5
+  unit: requests
+  notes: >-
+    Lower rate limit applied to DevTools requests specifically (5 requests per 5 minutes),
+    for security reasons. Same 429 handling and guidance applies.
+size_limits:
+- traffic_type: "Redox API traffic (Data Model API / FHIR API)"
+  limit_mb: 40
+- traffic_type: "Network Onramps (Carequality, TEFCA, CommonWell)"
+  limit_mb: 40
+- traffic_type: "HL7v2 messages over MLLP"
+  limit_mb: 30
+- traffic_type: "Uploaded files"
+  limit_mb: 30
+- traffic_type: "All other integrations or APIs"
+  limit_mb: 10
+response_headers:
+- header: X-RateLimit-Limit
+  observed_on: 429 response
+  notes: Docs state the header carries "the current limit (7,500)" as a worked example on a 429 response.
+status_on_exhaustion: 429
+response_body_note: >-
+  Docs do not publish a Retry-After header or a documented JSON error envelope for the 429 case
+  specifically; general error envelope for all statuses is captured in errors/redox-problem-types.yml.
+notes: >-
+  Redox documents throttling guidance for backfills and recommends contacting the Redox Help
+  Center if the standard limit is insufficient for a workload.

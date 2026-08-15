@@ -1,0 +1,603 @@
+generated: '2026-08-14'
+method: searched
+source: https://docs.redoxengine.com/how-to-use-redox/access-the-redox-mcp-server/
+status: published
+deployment:
+  mode: remote
+  endpoint: https://api.redoxengine.com/mcp
+  auth: oauth
+  verified: probed
+server:
+  name: redox
+  transport: http
+  url: https://api.redoxengine.com/mcp
+  description: 'Redox MCP server: an open, model-agnostic gateway for managing, configuring, monitoring, and automating
+    a Redox organization (built on the Redox Platform API) via any MCP-compatible AI client (Claude, ChatGPT, Cursor,
+    Amazon Q Developer, Gemini CLI, GitHub Copilot, Windsurf, Cline, Continue, Codex).'
+  launched: '2026-06-03'
+  opt_in: true
+  opt_in_note: An organization owner must enable the MCP server for their Redox organization before it can be used;
+    each individual user then authorizes their own access.
+authentication:
+  type: oauth2
+  notes: Connecting to https://api.redoxengine.com/mcp without a bearer token returns HTTP 401 with a WWW-Authenticate
+    Bearer challenge pointing at the RFC 9728 protected-resource metadata document.
+  oauth_protected_resource: https://api.redoxengine.com/.well-known/oauth-protected-resource
+  oauth_authorization_server: https://api.redoxengine.com/.well-known/oauth-authorization-server
+  scopes_supported:
+  - openid
+  - offline_access
+  - platform_access
+x-evidence:
+  fetched: '2026-08-14'
+  url: https://api.redoxengine.com/mcp
+  http_status: 401
+  header: 'www-authenticate: Bearer resource_metadata="https://api.redoxengine.com/.well-known/oauth-protected-resource"'
+  note: tools/list could not be enumerated live (auth-gated); the tool table below is transcribed from the provider's
+    published documentation page, not from a live introspection call.
+notes: Redox publishes a full MCP tool table on its docs site. "The MCP server is built on the Redox Platform API.
+  Any Platform API endpoint that's enabled for MCP has an MCP tool badge next to it." No public OpenAPI/Swagger
+  document for the Platform API was found (see openapi discovery notes in the enrichment record), so tools are recorded
+  here by name/category/access from the docs table rather than bound to operationIds — a tool crosswalk (mcp/redox-tool-crosswalk.yml)
+  is skipped for that reason; it would require a machine-readable Platform API spec to bind against.
+tool_count: 105
+access_breakdown:
+  read: 45
+  write: 41
+  delete: 19
+tools:
+- name: Get organization role assignments
+  category: Access control
+  access: Read
+  description: Retrieve a list of organization roles and related user assignments within the specified Redox organization.
+  source_operation: null
+- name: Update organization role assignment
+  category: Access control
+  access: Write
+  description: Update a user to the specified organization role.
+  source_operation: null
+- name: Remove organization role assignment
+  category: Access control
+  access: Delete
+  description: Remove a user from the specified Redox organization.
+  source_operation: null
+- name: Get environment role assignments
+  category: Access control
+  access: Read
+  description: Retrieve a list of environment roles and related user assignments within the specified environment.
+  source_operation: null
+- name: Assign environment role
+  category: Access control
+  access: Write
+  description: Assign a user to the specified environment role.
+  source_operation: null
+- name: Update environment role assignment
+  category: Access control
+  access: Write
+  description: Modify a user's existing environment role assignment.
+  source_operation: null
+- name: Remove environment role assignment
+  category: Access control
+  access: Delete
+  description: Remove a user from the specified environment.
+  source_operation: null
+- name: Get alerts
+  category: Alerts
+  access: Read
+  description: Retrieve a list of existing alert rules for the specified environment.
+  source_operation: null
+- name: Create alert
+  category: Alerts
+  access: Write
+  description: Create an alert rule for the specified environment.
+  source_operation: null
+- name: Get alert
+  category: Alerts
+  access: Read
+  description: Retrieve a specific alert rule based on its unique ID.
+  source_operation: null
+- name: Update alert
+  category: Alerts
+  access: Write
+  description: Update an existing alert rule within the specified environment.
+  source_operation: null
+- name: Delete alert
+  category: Alerts
+  access: Delete
+  description: Delete an alert rule within the specified environment.
+  source_operation: null
+- name: Create link
+  category: Alerts
+  access: Write
+  description: Link an existing alert rule to a subscription.
+  source_operation: null
+- name: Get link
+  category: Alerts
+  access: Read
+  description: Retrieve an alert rules's existing subscription link based on its unique identifier.
+  source_operation: null
+- name: Update link
+  category: Alerts
+  access: Write
+  description: Update an alert rule's existing subscription link.
+  source_operation: null
+- name: Delete link
+  category: Alerts
+  access: Delete
+  description: Delete an alert rule's subscription link.
+  source_operation: null
+- name: Get audit events
+  category: Audit
+  access: Read
+  description: Retrieve audit events within your Redox organization. Learn more about auditing .
+  source_operation: null
+- name: Get environment config modifiers
+  category: Config modifiers
+  access: Read
+  description: Retrieve a list of existing config modifiers within the specified environment.
+  source_operation: null
+- name: Create config modifier
+  category: Config modifiers
+  access: Write
+  description: Create a config modifier within the specified environment.
+  source_operation: null
+- name: Get organization config modifiers
+  category: Config modifiers
+  access: Read
+  description: Retrieve a list of existing config modifiers within a Redox organization.
+  source_operation: null
+- name: Get config modifier
+  category: Config modifiers
+  access: Read
+  description: Retrieve a specific config modifier based on its unique identifier.
+  source_operation: null
+- name: Update config modifier
+  category: Config modifiers
+  access: Write
+  description: Update an existing config modifier within a Redox organization.
+  source_operation: null
+- name: Delete config modifier
+  category: Config modifiers
+  access: Delete
+  description: Delete a config modifier within a Redox organization.
+  source_operation: null
+- name: Restore config modifier
+  category: Config modifiers
+  access: Write
+  description: Restore a config modifier to a previously used version.
+  source_operation: null
+- name: Test config modifier
+  category: Config modifiers
+  access: Write
+  description: Test a config modifier against payload(s).
+  source_operation: null
+- name: Get links
+  category: Config modifiers
+  access: Read
+  description: Retrieve all related links for an existing config modifier.
+  source_operation: null
+- name: Get environment links
+  category: Config modifiers
+  access: Read
+  description: Retrieve all config modifier links defined in a given environment.
+  source_operation: null
+- name: Create link
+  category: Config modifiers
+  access: Write
+  description: Link a config modifier to a subscription.
+  source_operation: null
+- name: Get link
+  category: Config modifiers
+  access: Read
+  description: Retrieve a config modifier's existing subscription link based on its unique identifier.
+  source_operation: null
+- name: Update link
+  category: Config modifiers
+  access: Write
+  description: Update a config modifier's existing subscription link.
+  source_operation: null
+- name: Delete link
+  category: Config modifiers
+  access: Delete
+  description: Delete a config modifier's subscription link.
+  source_operation: null
+- name: Set processing order
+  category: Config modifiers
+  access: Write
+  description: Set the order that the linked config modifier(s) should run at the designated processing location.
+  source_operation: null
+- name: Get configs
+  category: Configs
+  access: Read
+  description: Retrieve metadata of all available Redox base configs.
+  source_operation: null
+- name: Get source links
+  category: Configs
+  access: Read
+  description: Retrieve source(s) linked to the specified Redox base config.
+  source_operation: null
+- name: Create source link
+  category: Configs
+  access: Write
+  description: Link a Redox base config to the specified source.
+  source_operation: null
+- name: Update link
+  category: Configs
+  access: Write
+  description: Update an existing source link to a Redox base config.
+  source_operation: null
+- name: Delete link
+  category: Configs
+  access: Delete
+  description: Delete an existing source link to a Redox base config.
+  source_operation: null
+- name: Get statuses
+  category: Connections
+  access: Read
+  description: Retrieves the health status of all connections, including VPN test results.
+  source_operation: null
+- name: Get auth strategies
+  category: Credentials
+  access: Read
+  description: Retrieve a list of supported auth strategies that you can use to create an auth credential.
+  source_operation: null
+- name: Get auth credentials
+  category: Credentials
+  access: Read
+  description: Retrieve a list of existing auth credentials in the specified environment.
+  source_operation: null
+- name: Get auth credential
+  category: Credentials
+  access: Read
+  description: Retrieve an existing auth credential by its unique identifier.
+  source_operation: null
+- name: Delete auth credential
+  category: Credentials
+  access: Delete
+  description: Delete an auth credential.
+  source_operation: null
+- name: Get destinations
+  category: Destinations
+  access: Read
+  description: Retrieve a list of configured destinations in the specified environment.
+  source_operation: null
+- name: Create destination
+  category: Destinations
+  access: Write
+  description: Create a new destination in the specified environment.
+  source_operation: null
+- name: Get destination
+  category: Destinations
+  access: Read
+  description: Retrieve a specific destination based on its unique identifier.
+  source_operation: null
+- name: Update destination
+  category: Destinations
+  access: Write
+  description: Replace the auth credential of an existing destination within the specified environment.
+  source_operation: null
+- name: Delete destination
+  category: Destinations
+  access: Delete
+  description: Delete a destination.
+  source_operation: null
+- name: Update webhook signing secret
+  category: Destinations
+  access: Write
+  description: Replace the existing webhook signing secret for a destination.
+  source_operation: null
+- name: Run dataset tester
+  category: Destinations
+  access: Write
+  description: Send a sample dataset (i.e., HL7v2 ADT, C-CDA, X12 835, X12 837) to one of your configured destinations.
+  source_operation: null
+- name: Get environments
+  category: Environments
+  access: Read
+  description: Retrieve a list of environments that you're a member of.
+  source_operation: null
+- name: Get environment filters
+  category: Filters
+  access: Read
+  description: Retrieve a list of existing filters within the specified environment.
+  source_operation: null
+- name: Create filter
+  category: Filters
+  access: Write
+  description: Create a new filter in the specified environment.
+  source_operation: null
+- name: Get filter by id
+  category: Filters
+  access: Read
+  description: Retrieve a specific filter and its related metadata based on its unique identifier.
+  source_operation: null
+- name: Update filter
+  category: Filters
+  access: Write
+  description: Update an existing filter in the specified environment.
+  source_operation: null
+- name: Delete filter by id
+  category: Filters
+  access: Delete
+  description: Delete a filter.
+  source_operation: null
+- name: Restore filter
+  category: Filters
+  access: Write
+  description: Restore a filter to a previously used version.
+  source_operation: null
+- name: Create link
+  category: Filters
+  access: Write
+  description: Link a filter to a subscription.
+  source_operation: null
+- name: Get link
+  category: Filters
+  access: Read
+  description: Retrieve a filter's existing subscription link based on its unique identifier.
+  source_operation: null
+- name: Delete link
+  category: Filters
+  access: Delete
+  description: Delete a filter's subscription link.
+  source_operation: null
+- name: Get log by id
+  category: Logs
+  access: Read
+  description: Retrieve the specified log and its related metadata.
+  source_operation: null
+- name: Search metadata
+  category: Logs
+  access: Read
+  description: Search for relevant logs using query parameters to refine the returned list of log metadata.
+  source_operation: null
+- name: Search payloads
+  category: Logs
+  access: Read
+  description: Query for relevant logs using a particular search term that can be found within a log payload.
+  source_operation: null
+- name: Run log inspector
+  category: Logs
+  access: Read
+  description: Run log inspector to review metadata and operation details for the specified log.
+  source_operation: null
+- name: Get OAuth API keys
+  category: OAuth API keys
+  access: Read
+  description: Retrieve a list of configured OAuth API keys within the specified environment.
+  source_operation: null
+- name: Create OAuth API key
+  category: OAuth API keys
+  access: Write
+  description: Create an OAuth API key in the specified environment.
+  source_operation: null
+- name: Get OAuth API key
+  category: OAuth API keys
+  access: Read
+  description: Retrieve an OAuth API key based on its unique identifier.
+  source_operation: null
+- name: Update OAuth API key
+  category: OAuth API keys
+  access: Write
+  description: Update the key pair of an existing OAuth API key.
+  source_operation: null
+- name: Delete OAuth API key
+  category: OAuth API keys
+  access: Delete
+  description: Delete an OAuth API key.
+  source_operation: null
+- name: Get organizations
+  category: Organizations
+  access: Read
+  description: Retrieve a list of Redox organizations that you're a member of.
+  source_operation: null
+- name: Promote asset
+  category: Promotions
+  access: Write
+  description: Promote a config modifier from a staging environment to a production environment.
+  source_operation: null
+- name: Get sources
+  category: Sources
+  access: Read
+  description: Retrieve a list of configured sources in the specified environment.
+  source_operation: null
+- name: Create source
+  category: Sources
+  access: Write
+  description: Create a new source in the specified environment.
+  source_operation: null
+- name: Get source
+  category: Sources
+  access: Read
+  description: Retrieve a source based on its unique identifier.
+  source_operation: null
+- name: Update source
+  category: Sources
+  access: Write
+  description: Update the human readable source name.
+  source_operation: null
+- name: Delete source
+  category: Sources
+  access: Delete
+  description: Delete a source.
+  source_operation: null
+- name: Get portmaps
+  category: Sources
+  access: Read
+  description: Retrieve any available portmaps for the specified source.
+  source_operation: null
+- name: Create portmap
+  category: Sources
+  access: Write
+  description: Create a portmap for the specified MLLP source.
+  source_operation: null
+- name: Get portmap
+  category: Sources
+  access: Read
+  description: Retrieve a portmap for the specified source.
+  source_operation: null
+- name: Delete portmap
+  category: Sources
+  access: Delete
+  description: Delete a portmap for the specified MLLP source.
+  source_operation: null
+- name: Get subscriptions
+  category: Subscriptions
+  access: Read
+  description: Retrieve a list of configured subscriptions, including subscription details and queue statuses, from
+    the specified environment.
+  source_operation: null
+- name: Create subscription
+  category: Subscriptions
+  access: Write
+  description: Create a subscription in the specified environment.
+  source_operation: null
+- name: Get product classifications
+  category: Transaction Usage
+  access: Read
+  description: Retrieve a list of Redox product(s) your organization has purchased (whether currently, previously,
+    or for future use) and review contract details.
+  source_operation: null
+- name: Get transaction metrics
+  category: Transaction Usage
+  access: Read
+  description: Retrieve transaction usage metrics of your organization's Redox product(s) for a particular time
+    range or connection.
+  source_operation: null
+- name: Get transaction metrics by Redox product
+  category: Transaction Usage
+  access: Read
+  description: Retrieve transaction usage metrics for one of your organization's Redox products for a particular
+    time range.
+  source_operation: null
+- name: Get value sets
+  category: Translation sets
+  access: Read
+  description: Retrieve a list of existing value sets for the specified environment.
+  source_operation: null
+- name: Create value set
+  category: Translation sets
+  access: Write
+  description: Create a value set within the specified environment.
+  source_operation: null
+- name: Get value set
+  category: Translation sets
+  access: Read
+  description: Retrieve a value set based on its unique identifier.
+  source_operation: null
+- name: Update value set
+  category: Translation sets
+  access: Write
+  description: Update a value set by either adding new values or changing or deleting existing values.
+  source_operation: null
+- name: Delete value set
+  category: Translation sets
+  access: Delete
+  description: Delete a value set.
+  source_operation: null
+- name: Create value
+  category: Translation sets
+  access: Write
+  description: Add a new value to an existing value set.
+  source_operation: null
+- name: Update value
+  category: Translation sets
+  access: Write
+  description: Update an existing value in a value set.
+  source_operation: null
+- name: Delete value
+  category: Translation sets
+  access: Delete
+  description: Delete a value in a value set.
+  source_operation: null
+- name: Get translation sets
+  category: Translation sets
+  access: Read
+  description: Retrieve a list of existing translation sets within the specified environment.
+  source_operation: null
+- name: Create translation set
+  category: Translation sets
+  access: Write
+  description: Create a translation set within the specified environment.
+  source_operation: null
+- name: Get translation set
+  category: Translation sets
+  access: Read
+  description: Retrieve a translation set based on its unique identifier.
+  source_operation: null
+- name: Update translation set
+  category: Translation sets
+  access: Write
+  description: Update a translation set by either adding new mappings or changing or deleting existing mappings.
+  source_operation: null
+- name: Delete translation set
+  category: Translation sets
+  access: Delete
+  description: Delete a translation set.
+  source_operation: null
+- name: Restore translation set
+  category: Translation sets
+  access: Write
+  description: Restore a translation set to a previously used version.
+  source_operation: null
+- name: Add a translation
+  category: Translation sets
+  access: Write
+  description: Map two values to create a new translation in an existing translation set.
+  source_operation: null
+- name: Remove a translation
+  category: Translation sets
+  access: Delete
+  description: Remove a mapped translation from a translation set.
+  source_operation: null
+- name: Create link
+  category: Translation sets
+  access: Write
+  description: Link a translation set to the specified log stage.
+  source_operation: null
+- name: Get link
+  category: Translation sets
+  access: Read
+  description: Retrieve a translation set's existing link based on its unique identifier.
+  source_operation: null
+- name: Update link
+  category: Translation sets
+  access: Write
+  description: Update an existing translation set link.
+  source_operation: null
+- name: Delete a link
+  category: Translation sets
+  access: Delete
+  description: Delete a translation set link.
+  source_operation: null
+- name: Get org VPNs
+  category: VPNs
+  access: Read
+  description: Retrieve a list of VPNs associated with the specified organization.
+  source_operation: null
+ai_agent_resources:
+- agent: Claude
+  note: Custom Redox connector available in the Claude Connectors directory.
+- agent: ChatGPT
+  note: Use MCP and connectors.
+- agent: Cursor
+  note: Install MCP servers.
+- agent: Amazon Q Developer
+  note: Using MCP with Amazon Q Developer.
+- agent: Gemini CLI
+  note: Set up your MCP server.
+- agent: GitHub Copilot
+  note: Adding MCP servers.
+- agent: Windsurf
+  note: Add a new MCP.
+- agent: Cline
+  note: MCP servers.
+- agent: Continue
+  note: How to set up MCP.
+- agent: Codex
+  note: Connect Codex to an MCP server.
+related_docs:
+- https://docs.redoxengine.com/how-to-use-redox/access-the-redox-mcp-server/
+- https://docs.redoxengine.com/how-to-use-redox/enable-redox-ai-assistants-or-mcp-server/
+- https://docs.redoxengine.com/how-to-use-redox/get-started-with-mcp-templates/
+- https://docs.redoxengine.com/api-reference/platform-api/

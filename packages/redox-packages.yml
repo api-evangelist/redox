@@ -1,27 +1,57 @@
-generated: '2026-07-21'
+generated: '2026-08-14'
 method: searched
-source: https://github.com/RedoxEngine
+source: https://github.com/RedoxEngine ; https://registry.npmjs.org/@redoxengine/redox-hl7-v2
 notes: >-
-  Redox does not publish official multi-language API client SDKs to public package
-  registries; integration is via the FHIR / Data Model / Platform REST APIs directly.
-  The RedoxEngine GitHub organization publishes first-party open-source libraries and
-  sample applications (Node.js, .NET, Go SSO) that demonstrate connecting to the API.
+  Redox does not publish official multi-language API client SDKs (FHIR/Data Model/Platform) to
+  public package registries; integration is via the REST APIs directly. The RedoxEngine GitHub
+  organization publishes one first-party open-source library (redox-hl7-v2, also mirrored to npm
+  under a scoped name) and two first-party sample/starter applications (Node.js, .NET) that
+  demonstrate connecting to the API. Currency fields below are read from registry/GitHub metadata,
+  not guessed.
 packages:
+- language: javascript
+  registry: npm
+  name: "@redoxengine/redox-hl7-v2"
+  url: https://www.npmjs.com/package/@redoxengine/redox-hl7-v2
+  install: npm install @redoxengine/redox-hl7-v2
+  official: true
+  version: '1.0.1'
+  published: '2018-09-03'
+  description: Redox's in-house HL7v2 parser/generator library, published to npm under a scoped name.
+  note: >-
+    The npm package's latest published version (1.0.1, 2018-09-03) is stale relative to the
+    upstream GitHub repository, which carries newer unpublished tags (2.0.0 GitHub Release
+    2022-01-20; a further v2.0.1 tag pushed 2025-08-20 with no corresponding npm release) — a
+    version-currency gap between the source repo and the registry distribution.
 - language: javascript
   registry: github
   name: redox-hl7-v2
   url: https://github.com/RedoxEngine/redox-hl7-v2
   official: true
-  description: Redox's in-house HL7v2 parser/generator library.
+  version: v2.0.1
+  published: '2025-08-20'
+  version_source: git tag (no GitHub Release object for this tag; latest Release is 2.0.0, 2022-01-20)
+  description: Redox's in-house HL7v2 parser/generator library (source repository; ahead of the npm
+    distribution above).
 - language: javascript
   registry: github
   name: redox-sample-nodejs
   url: https://github.com/RedoxEngine/redox-sample-nodejs
   official: true
+  version: null
+  published: null
+  note: >-
+    Sample/starter application, not distributed via a package registry and carries no GitHub tags
+    or Releases to date a version from. Repo last pushed 2023-03-02 (GitHub API pushed_at).
   description: Node.js starter/sample for the Redox API.
 - language: csharp
   registry: github
   name: .NET-Sample-App
   url: https://github.com/RedoxEngine/.NET-Sample-App
   official: true
+  version: null
+  published: null
+  note: >-
+    Sample application, not distributed via NuGet/a package registry and carries no GitHub tags
+    or Releases to date a version from. Repo last pushed 2023-06-08 (GitHub API pushed_at).
   description: C# sample application for connecting to Redox.

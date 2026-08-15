@@ -1,0 +1,62 @@
+generated: '2026-08-14'
+method: searched
+source: https://docs.redoxengine.com/api-reference/error-handling-and-responses/
+format: custom
+notes: >-
+  Redox does not use RFC 9457 application/problem+json; no OpenAPI/Swagger definition was found
+  for the FHIR, Data Model, or Platform APIs to derive response schemas from (see the enrichment
+  record's contract-discovery notes), so this catalog is transcribed verbatim from the provider's
+  published HTTP error-code reference rather than derived from 4xx/5xx response objects in a spec.
+problems:
+- status: 400
+  title: Bad Request
+  description: The request is formatted incorrectly or is missing required information.
+- status: 401
+  title: Unauthorized
+  description: Authentication failed. Refresh or regenerate the access token and try again.
+- status: 403
+  title: Forbidden
+  description: >-
+    (Shared with 404 in the docs.) The request is missing one or more of: the POST verb, the
+    destination identifier, or the event type / FHIR interaction or operation in the URL.
+- status: 404
+  title: Not Found
+  description: >-
+    (Shared with 403 in the docs.) The request is missing one or more of: the POST verb, the
+    destination identifier, or the event type / FHIR interaction or operation in the URL.
+- status: 413
+  title: Payload Too Large
+  description: The payload sent exceeds the payload size limit (see rate-limits/redox-rate-limits.yml
+    for the per-traffic-type size limits).
+- status: 429
+  title: Too Many Requests
+  description: >-
+    The system has exceeded the rate limit (7,500 requests per IP address is used as the docs'
+    worked example) for the current five-minute rolling window. Wait, then retry.
+  ref: rate-limits/redox-rate-limits.yml
+- status: 500
+  title: Internal Server Error
+  description: An unknown error occurred within Redox.
+- status: 502
+  title: Bad Gateway
+  description: The request was dropped within Redox, sometimes during internal update rollouts.
+- status: 504
+  title: Gateway Timeout
+  description: The request took too long to complete; requests time out after a couple of minutes.
+retry_guidance:
+  policy: exponential backoff recommended for 5XX responses
+  async_message_retries: >-
+    For asynchronous messages in production, retries continue on a NACK or non-acknowledgment,
+    with a steadily increasing wait period settling to a fixed 1-2 minute interval, until the
+    destination succeeds or the request is manually paused. Test-request delivery failures to
+    production are not retried or queue-paused.
+  queue_pausing:
+    non_critical_errors: >-
+      Return 200 OK before or after identifying a non-critical, later-resolvable issue so the
+      production queue is not paused; log the error and file a Help Center ticket if needed.
+    critical_errors: >-
+      Return a 4XX/5XX status to intentionally pause the queue during downtime or a critical
+      failure so no data is lost while the issue is resolved.
+  failed_attempt_notifications: >-
+    An email alert fires after the third failed delivery attempt to an address on file in the
+    Organization Profile; custom notification setups are available as an advanced feature.

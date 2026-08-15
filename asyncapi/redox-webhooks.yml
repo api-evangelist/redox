@@ -1,0 +1,59 @@
+generated: '2026-08-14'
+method: searched
+source: https://docs.redoxengine.com/api-reference/fhir-api-reference/fhir-notifications/ ;
+  https://docs.redoxengine.com/basics/data-exchange-with-redox/receiving-data-from-redox/
+spec_type: Webhooks
+notes: >-
+  No AsyncAPI document was found on any Redox host (docs is a hand-authored Gatsby site, not a
+  spec-driven docs generator — see the enrichment record's contract-discovery notes), so this is
+  captured as a Webhooks catalog rather than a formal AsyncAPI spec. Redox pushes event
+  "notifications" as authenticated, signed HTTP callbacks to a customer-configured "destination"
+  endpoint — functionally a webhook — for both the FHIR API (32 published notification types
+  below) and the legacy Data Model API (event-based JSON messages, one type per data model).
+delivery:
+  mechanism: >-
+    Redox POSTs event payloads to a destination endpoint configured per environment
+    (Development/Staging/Production). A destination can require a webhook signing secret
+    (MCP tool "Update webhook signing secret" — see mcp/redox-mcp.yml) and/or an auth
+    credential using one of the auth strategies below.
+  auth_strategies:
+  - AWS Signature Version 4 (AwsSigv4)
+  - Google Workload Identity Federation (WIF)
+  - OAuth 2.0 2-legged
+  - OAuth 2.0 2-legged with JWT Bearer for GCP
+  - SMART Backend JWT Bearer
+  - "mTLS with client certificates (available on request via Technical Account Manager)"
+  jku_auth: >-
+    Optional JKU (JWK-Set URL) auth exposes a Redox-hosted URL of public keys for a given auth
+    credential, toggled per credential or via the Platform API `includeJKU` parameter.
+  retry_policy: >-
+    See errors/redox-problem-types.yml retry_guidance — NACK/no-ack retries back off to a fixed
+    1-2 minute interval; queue pausing is controllable by the receiving system's response status.
+fhir_notifications:
+  count: 32
+  categories:
+  - name: Document
+    events: [document-created, document-deleted, document-replaced]
+  - name: Financial
+    events: [financial-new]
+  - name: Order
+    events: [device-request-cancelled, device-request-created, device-request-updated,
+      medication-request-cancelled, medication-request-created, medication-request-updated,
+      referral-accepted, referral-completed, referral-confirm-cancelled, referral-declined,
+      referral-request-cancelled, referral-requested, referral-schedule-updated,
+      service-request-cancelled, service-request-created, service-request-updated]
+  - name: PatientAdmin
+    events: [patient-arrived, patient-created, patient-discharged, patient-merged,
+      patient-pre-admitted, patient-registered, patient-transferred, patient-updated]
+  - name: Result
+    events: [result-created]
+  - name: Scheduling
+    events: [scheduling-appointment-booked, scheduling-appointment-cancelled, scheduling-appointment-updated]
+  reference: https://docs.redoxengine.com/api-reference/fhir-api-reference/fhir-notifications/
+legacy_data_model_events:
+  note: >-
+    The legacy Redox Data Model API (Redox Messages) is itself an event-based JSON message
+    format (e.g. PatientAdmin, Order, Financial, Scheduling, Inventory, Medications, Provider,
+    Research data models) predating the FHIR notification set above; see
+    https://docs.redoxengine.com/api-reference/data-model-api/ for the full catalog. Not
+    re-enumerated here to avoid duplicating the FHIR list.

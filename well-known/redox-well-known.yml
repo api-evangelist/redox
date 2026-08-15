@@ -1,10 +1,15 @@
-generated: '2026-07-21'
+generated: '2026-08-14'
 method: searched
 host: https://api.redoxengine.com
 documents:
 - path: /.well-known/oauth-authorization-server
   status: 200
   file: redox-oauth-authorization-server.json
+- path: /.well-known/oauth-protected-resource
+  status: 200
+  file: redox-oauth-protected-resource.json
+  note: RFC 9728 protected-resource metadata; also served as the www-authenticate resource_metadata
+    challenge on an unauthenticated POST to https://api.redoxengine.com/mcp (HTTP 401).
 - path: /.well-known/openid-configuration
   status: 404
 - path: /.well-known/security.txt
@@ -13,11 +18,30 @@ documents:
   status: 404
 - path: /.well-known/ai-plugin.json
   status: 404
+- path: /.well-known/agent-card.json
+  status: 404
+- path: /.well-known/agent.json
+  status: 404
 other_hosts:
 - host: https://redoxengine.com
   documents:
   - {path: /.well-known/security.txt, status: 404}
   - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-protected-resource, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
 - host: https://docs.redoxengine.com
   documents:
   - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/oauth-protected-resource, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+- host: https://dashboard.redoxengine.com
+  documents:
+  - {path: /.well-known/agent-card.json, status: 200, note: "SPA catch-all — body is the dashboard's HTML shell, not a real document; rejected, not counted as a hit"}
+  - {path: /.well-known/openapi.json, status: 200, note: "SPA catch-all — same HTML shell as above; rejected"}
+  - {path: /.well-known/oauth-protected-resource, status: 200, note: "SPA catch-all — same HTML shell; rejected"}
+notes: >-
+  The dashboard.redoxengine.com SPA answers 200 with an HTML shell for every path (including
+  /.well-known/* and /openapi.json), which is the exact false-positive pattern the enrichment
+  contract calls out — none of those hits are counted as real documents.

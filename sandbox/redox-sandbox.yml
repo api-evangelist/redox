@@ -1,0 +1,97 @@
+generated: '2026-08-14'
+method: searched
+source: https://docs.redoxengine.com/how-to-use-redox/test-with-redox-fhir-sandbox-data/
+summary: >-
+  Redox operates a full-featured FHIR sandbox seeded with synthetic test patients (partly
+  generated from the open-source Synthea dataset) covering most FHIR resources in the API
+  suite, supporting reads, queries, and writebacks. The sandbox is periodically refreshed back
+  to its Redox-seeded state to keep test data valuable and to clear any confidential data
+  customers may have written into it.
+destination_slug: redox-fhir-sandbox
+environments:
+- Development
+- Staging
+- Production
+environments_ref: authentication/redox-authentication.yml
+search_identifiers:
+  matching: exact match only
+  identifier_types:
+  - {type: MR, system: "http://.../Redox FHIR API sandbox environment (Medical Record ID)"}
+  - {type: DL, name: "Driver's license number"}
+  - {type: PPN, name: "Passport number"}
+  - {type: SSN, system: "http://hl7.org/fhir/sid/us-ssn"}
+  demographic_params:
+  - given name
+  - family name
+  - gender
+  - birthdate
+  - address-city
+  - address-state
+  - address-postalcode
+  - phone (matches home or mobile)
+  - email address
+  notes: The sandbox does not support searching by street address; use city/state/postal code instead.
+test_patients:
+- name: Synthia Davis
+  fhir_id: fbee8d6b-5acf-370c-7edd-af0d84f5288c
+  mrn: 3Y67hJYUopQywm8frKLGBf
+  dob: '2000-10-10'
+  gender: female
+  address: "Revere, MA 02151"
+  resources: [Appointment, CarePlan, CareTeam, Condition, Coverage, Device, DiagnosticReport,
+    DocumentReference, Encounter, Goal, Immunization, MedicationRequest, Observation, Patient,
+    Procedure, ServiceRequest]
+- name: Micheal Shields
+  fhir_id: 307b6419-5147-4716-10b1-bb458ac191c3
+  mrn: 5Z89kLZWqrSzvn9gtNMHCh
+  dob: '2003-07-19'
+  gender: female
+  address: "Fairhaven, MA"
+  resources: [AllergyIntolerance, Appointment, CarePlan, CareTeam, Condition, Coverage,
+    DiagnosticReport, DocumentReference, Encounter, Medication, MedicationAdministration,
+    MedicationRequest, Observation, Patient, Procedure]
+- name: Narcisa Torphy
+  fhir_id: 18022a84-1fd7-ba38-3567-efbc6a50e9d4
+  mrn: 7A12mNXYstUvop2huOPJDi
+  dob: '1967-05-11'
+  gender: female
+  address: "Dedham, MA 02026"
+  resources: [Condition, Coverage, DiagnosticReport, DocumentReference, Encounter,
+    ImagingStudy, Observation, Patient, Procedure]
+- name: Roosevelt Turner
+  fhir_id: 7673112e-f252-3c46-a7e7-ac1e1fe3fa45
+  mrn: 9B34oPZWuwQxyj4kvQRKEj
+  dob: '1994-08-29'
+  gender: male
+  address: "Boston, MA 02467"
+  resources: [AllergyIntolerance, CarePlan, CareTeam, Condition, Coverage, DiagnosticReport,
+    DocumentReference, Encounter, Observation, Patient, Procedure, ServiceRequest]
+- name: Keva Green
+  fhir_id: 81c2f5eb-f99f-40c4-b504-59483e6148d7
+  mrn: kyHGADnvX3xbkU4V9ayaqh
+  dob: '1995-08-26'
+  gender: female
+  address: "Hillsboro, OR 97123"
+  editable: true
+  note: Editable test patient — demographic data may drift from the values published here.
+  resources: [Account, AllergyIntolerance, Appointment, Condition, Coverage, DiagnosticReport,
+    DocumentReference, Encounter, Immunization, MedicationRequest, MedicationAdministration,
+    RelatedPerson, ServiceRequest, Specimen]
+fixture_tooling:
+- name: Test Patients CSV
+  location: "Redox dashboard > Developer > Test Tools > Dev Tool Downloads"
+  description: >-
+    Hundreds of additional seeded test patients with associated clinical data supporting read,
+    query, and writeback requests.
+- name: Dataset tester (Platform API / MCP tool)
+  description: >-
+    "Run dataset tester" sends a sample dataset (HL7v2 ADT, C-CDA, X12 835, X12 837) to a
+    configured destination for connectivity testing.
+  ref: mcp/redox-mcp.yml
+data_provenance:
+  synthea: >-
+    Some sandbox test data is generated from the open-source Synthea project (Walonoski et al.,
+    "Synthea: An approach, method, and software mechanism for generating synthetic patient data").
+notes: >-
+  This is the source-of-truth reference; Redox may refresh/rotate the sandbox and specific
+  synthetic patient values could change over time.
