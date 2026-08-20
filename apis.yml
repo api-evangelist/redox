@@ -85,6 +85,16 @@ apis:
   - FHIR
   - HL7
   - Healthcare
+  - Notification
+  - Patient Access
+  - Query
+  - R4
+  - USCDI
+  - Writebacks
+  tags_raw:
+  - FHIR
+  - HL7
+  - Healthcare
   - Notifications
   - Patient Access
   - Queries
@@ -113,6 +123,12 @@ apis:
 - aid: redox:redox-hl7-v2-library
   name: Redox HL7 v2 Library
   tags:
+  - HL7
+  - HL7v2
+  - JavaScript
+  - Open-Source
+  - Parser
+  tags_raw:
   - HL7
   - HL7v2
   - JavaScript
