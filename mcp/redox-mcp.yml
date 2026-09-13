@@ -7,21 +7,27 @@ deployment:
   endpoint: https://api.redoxengine.com/mcp
   auth: oauth
   verified: probed
+  probe_prior: (never probed)
+  probe: gated
+  probe_why: RFC 9728 challenge on the MCP path only
+  checked: '2026-09-11'
+  source: claimed-backlog re-probe 2026-09-11
 server:
   name: redox
   transport: http
   url: https://api.redoxengine.com/mcp
-  description: 'Redox MCP server: an open, model-agnostic gateway for managing, configuring, monitoring, and automating
-    a Redox organization (built on the Redox Platform API) via any MCP-compatible AI client (Claude, ChatGPT, Cursor,
-    Amazon Q Developer, Gemini CLI, GitHub Copilot, Windsurf, Cline, Continue, Codex).'
+  description: 'Redox MCP server: an open, model-agnostic gateway for managing, configuring, monitoring,
+    and automating a Redox organization (built on the Redox Platform API) via any MCP-compatible AI client
+    (Claude, ChatGPT, Cursor, Amazon Q Developer, Gemini CLI, GitHub Copilot, Windsurf, Cline, Continue,
+    Codex).'
   launched: '2026-06-03'
   opt_in: true
-  opt_in_note: An organization owner must enable the MCP server for their Redox organization before it can be used;
-    each individual user then authorizes their own access.
+  opt_in_note: An organization owner must enable the MCP server for their Redox organization before it
+    can be used; each individual user then authorizes their own access.
 authentication:
   type: oauth2
-  notes: Connecting to https://api.redoxengine.com/mcp without a bearer token returns HTTP 401 with a WWW-Authenticate
-    Bearer challenge pointing at the RFC 9728 protected-resource metadata document.
+  notes: Connecting to https://api.redoxengine.com/mcp without a bearer token returns HTTP 401 with a
+    WWW-Authenticate Bearer challenge pointing at the RFC 9728 protected-resource metadata document.
   oauth_protected_resource: https://api.redoxengine.com/.well-known/oauth-protected-resource
   oauth_authorization_server: https://api.redoxengine.com/.well-known/oauth-authorization-server
   scopes_supported:
@@ -33,13 +39,14 @@ x-evidence:
   url: https://api.redoxengine.com/mcp
   http_status: 401
   header: 'www-authenticate: Bearer resource_metadata="https://api.redoxengine.com/.well-known/oauth-protected-resource"'
-  note: tools/list could not be enumerated live (auth-gated); the tool table below is transcribed from the provider's
-    published documentation page, not from a live introspection call.
-notes: Redox publishes a full MCP tool table on its docs site. "The MCP server is built on the Redox Platform API.
-  Any Platform API endpoint that's enabled for MCP has an MCP tool badge next to it." No public OpenAPI/Swagger
-  document for the Platform API was found (see openapi discovery notes in the enrichment record), so tools are recorded
-  here by name/category/access from the docs table rather than bound to operationIds — a tool crosswalk (mcp/redox-tool-crosswalk.yml)
-  is skipped for that reason; it would require a machine-readable Platform API spec to bind against.
+  note: tools/list could not be enumerated live (auth-gated); the tool table below is transcribed from
+    the provider's published documentation page, not from a live introspection call.
+notes: Redox publishes a full MCP tool table on its docs site. "The MCP server is built on the Redox Platform
+  API. Any Platform API endpoint that's enabled for MCP has an MCP tool badge next to it." No public OpenAPI/Swagger
+  document for the Platform API was found (see openapi discovery notes in the enrichment record), so tools
+  are recorded here by name/category/access from the docs table rather than bound to operationIds — a
+  tool crosswalk (mcp/redox-tool-crosswalk.yml) is skipped for that reason; it would require a machine-readable
+  Platform API spec to bind against.
 tool_count: 105
 access_breakdown:
   read: 45
@@ -49,7 +56,8 @@ tools:
 - name: Get organization role assignments
   category: Access control
   access: Read
-  description: Retrieve a list of organization roles and related user assignments within the specified Redox organization.
+  description: Retrieve a list of organization roles and related user assignments within the specified
+    Redox organization.
   source_operation: null
 - name: Update organization role assignment
   category: Access control
@@ -64,7 +72,8 @@ tools:
 - name: Get environment role assignments
   category: Access control
   access: Read
-  description: Retrieve a list of environment roles and related user assignments within the specified environment.
+  description: Retrieve a list of environment roles and related user assignments within the specified
+    environment.
   source_operation: null
 - name: Assign environment role
   category: Access control
@@ -204,7 +213,8 @@ tools:
 - name: Set processing order
   category: Config modifiers
   access: Write
-  description: Set the order that the linked config modifier(s) should run at the designated processing location.
+  description: Set the order that the linked config modifier(s) should run at the designated processing
+    location.
   source_operation: null
 - name: Get configs
   category: Configs
@@ -289,7 +299,8 @@ tools:
 - name: Run dataset tester
   category: Destinations
   access: Write
-  description: Send a sample dataset (i.e., HL7v2 ADT, C-CDA, X12 835, X12 837) to one of your configured destinations.
+  description: Send a sample dataset (i.e., HL7v2 ADT, C-CDA, X12 835, X12 837) to one of your configured
+    destinations.
   source_operation: null
 - name: Get environments
   category: Environments
@@ -444,8 +455,8 @@ tools:
 - name: Get subscriptions
   category: Subscriptions
   access: Read
-  description: Retrieve a list of configured subscriptions, including subscription details and queue statuses, from
-    the specified environment.
+  description: Retrieve a list of configured subscriptions, including subscription details and queue statuses,
+    from the specified environment.
   source_operation: null
 - name: Create subscription
   category: Subscriptions
@@ -455,20 +466,20 @@ tools:
 - name: Get product classifications
   category: Transaction Usage
   access: Read
-  description: Retrieve a list of Redox product(s) your organization has purchased (whether currently, previously,
-    or for future use) and review contract details.
+  description: Retrieve a list of Redox product(s) your organization has purchased (whether currently,
+    previously, or for future use) and review contract details.
   source_operation: null
 - name: Get transaction metrics
   category: Transaction Usage
   access: Read
-  description: Retrieve transaction usage metrics of your organization's Redox product(s) for a particular time
-    range or connection.
+  description: Retrieve transaction usage metrics of your organization's Redox product(s) for a particular
+    time range or connection.
   source_operation: null
 - name: Get transaction metrics by Redox product
   category: Transaction Usage
   access: Read
-  description: Retrieve transaction usage metrics for one of your organization's Redox products for a particular
-    time range.
+  description: Retrieve transaction usage metrics for one of your organization's Redox products for a
+    particular time range.
   source_operation: null
 - name: Get value sets
   category: Translation sets
@@ -528,7 +539,8 @@ tools:
 - name: Update translation set
   category: Translation sets
   access: Write
-  description: Update a translation set by either adding new mappings or changing or deleting existing mappings.
+  description: Update a translation set by either adding new mappings or changing or deleting existing
+    mappings.
   source_operation: null
 - name: Delete translation set
   category: Translation sets
