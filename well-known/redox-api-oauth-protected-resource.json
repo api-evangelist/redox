@@ -1,0 +1,1 @@
+{"resource":"https://api.redoxengine.com","authorization_servers":["https://api.redoxengine.com"],"scopes_supported":["openid","offline_access","platform_access"],"bearer_methods_supported":["header"]}
