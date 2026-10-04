@@ -16,16 +16,19 @@ x-backed-by:
 x-tier: stub
 x-tier-reason: portfolio-lead
 deliveryModel:
-  model: unknown
+  model: saas
+  license_evidence:
+    not_product:
+    - redoxengine/redox-hl7-v2
   open_source: unknown
   commercial: true
   callable_host: false
-  label: Delivery model not determined — needs a product licence on record
+  label: Hosted service · you call their endpoint
   confidence: low
   source:
   - pricing
-  - repository-unlicensed
-  generated: '2026-08-28'
+  - repository-not-product
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: unknown
@@ -138,7 +141,7 @@ apis:
   - HL7
   - HL7v2
   - JavaScript
-  - Open-Source
+  - Open Source
   - Parser
   tags_raw:
   - HL7
@@ -146,6 +149,7 @@ apis:
   - JavaScript
   - Open Source
   - Parser
+  - Open-Source
   humanURL: https://github.com/RedoxEngine/redox-hl7-v2
   properties:
   - url: https://github.com/RedoxEngine/redox-hl7-v2
