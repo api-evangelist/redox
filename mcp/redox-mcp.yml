@@ -613,3 +613,22 @@ related_docs:
 - https://docs.redoxengine.com/how-to-use-redox/enable-redox-ai-assistants-or-mcp-server/
 - https://docs.redoxengine.com/how-to-use-redox/get-started-with-mcp-templates/
 - https://docs.redoxengine.com/api-reference/platform-api/
+rfc9728:
+  endpoint: https://api.redoxengine.com/mcp
+  metadata_url: https://api.redoxengine.com/.well-known/oauth-protected-resource
+  discovered_via: WWW-Authenticate resource_metadata on an anonymous POST initialize
+  fetched: '2026-09-25'
+  http_status: 200
+  content_type: application/json
+  document:
+    resource: https://api.redoxengine.com
+    authorization_servers:
+    - https://api.redoxengine.com
+    scopes_supported:
+    - openid
+    - email
+    - profile
+    - offline_access
+    - platform_access
+    bearer_methods_supported:
+    - header
