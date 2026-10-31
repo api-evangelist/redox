@@ -64,6 +64,137 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Redox is a company surfaced as a portfolio company of battery-ventures and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Redox is a healthcare data interoperability platform, founded in 2014 and headquartered in Madison, Wisconsin, that enables secure, real-time exchange of clinical and administrative data across the healthcare ecosystem. Through a single API and a network of 100+ EHR connections and 12,000+ connected healthcare organizations, Redox lets digital health vendors, providers, payers, EHRs, and life-sciences companies integrate once and reach the entire network. The platform offers a modern FHIR API, the legacy Redox Data Model (Redox Messages) event-based API, and a Platform API for managing organizations, sources, and destinations. Redox is HITRUST r2 and SOC 2 Type 2 certified and HIPAA, GDPR, and CCPA aligned, processing tens of billions of healthcare transactions annually.
 
-Backed by: battery-ventures
+**Areas:** Company · Healthcare · Interoperability · FHIR · Electronic Health Records · Health Data · Integration · HL7 · Digital Health · Healthcare API
+
+## Redox on APIs.io
+
+Everything profiled for Redox is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/redox/](https://apis.io/providers/redox/)** — or go straight to one of the APIs or properties below.
+
+### APIs (5)
+
+- [Redox FHIR API](https://apis.io/apis/redox/redox-fhir-api/) — Redox's modern FHIR API for exchanging clinical and administrative healthcare data across the Redox network using HL7 FHIR resources and notifications,…
+- [Redox Data Model API](https://apis.io/apis/redox/redox-data-model-api/) — Redox's legacy event-based Data Model API (Redox Messages) for exchanging structured healthcare data across the network via JSON message payloads.
+- [Redox Platform API](https://apis.io/apis/redox/redox-platform-api/) — The Redox Platform API for managing organizations, sources, destinations, and platform settings via user-level API keys.
+- [Redox FHIR R4 API](https://apis.io/apis/redox/redox-fhir-r4-api/) — The Redox FHIR R4 API exposes HL7 FHIR R4 resources for healthcare data exchange between connected systems, supporting FHIR notifications, queries, and…
+- [Redox HL7 v2 Library](https://apis.io/apis/redox/redox-hl7-v2-library/) — redox-hl7-v2 is Redox's open-source JavaScript library for parsing and generating HL7 v2 messages, useful for teams integrating with legacy hospital…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Redox Webhooks](https://apis.io/asyncapis/redox/redox-webhooks/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [redox](https://apis.io/servers/redox/redox/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Redox Authentication](https://apis.io/security/redox/redox-authentication/)
+- [Redox Domain Security](https://apis.io/security/redox/redox-domain-security/)
+- [Redox Trust Center](https://apis.io/security/redox/redox-trust-center/)
+- [Redox Vulnerability Disclosure](https://apis.io/security/redox/redox-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Redox Scopes](https://apis.io/scopes/redox/redox-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Redox Plans Pricing](https://apis.io/plans/redox/redox-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Redox Rate Limits](https://apis.io/rate-limits/redox/redox-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.redoxengine.com)
+- [Documentation](https://docs.redoxengine.com/)
+- [Getting started](https://docs.redoxengine.com/basics/)
+- [API reference](https://docs.redoxengine.com/api-reference/)
+- [Pricing](https://redoxengine.com/forms/pricing)
+- [Sign up](https://dashboard.redoxengine.com/#/signup/)
+- [Support](https://docs.redoxengine.com/troubleshooting/)
+- [Changelog](https://redoxengine.com/blog/category/changelog/)
+- [Blog](https://redoxengine.com/blog/)
+- [Security](https://docs.redoxengine.com/security/responsible-disclosure)
+- [Compliance](https://redoxengine.com/platform-security/)
+- [Trust centre](https://redoxengine.com/platform-security/)
+- [Terms of service](https://redoxengine.com/legal/terms-of-use/)
+- [Privacy policy](https://redoxengine.com/legal/privacy-policy/)
+- [GitHub](https://github.com/RedoxEngine)
+- [Status](https://status.redoxengine.com/)
+
+## API Evangelist rating
+
+**Kin Score 57.8** — strong · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 71.7 |
+| Contract quality | 39.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 73.7 |
+| Developer ergonomics | 71.4 |
+| Access clarity | 47.4 |
+
+**Agent readiness 50.0** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | yes |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 47.7** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/redox/](https://apis.io/providers/redox/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Redox: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/redox/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
